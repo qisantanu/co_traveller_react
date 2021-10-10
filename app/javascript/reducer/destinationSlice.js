@@ -1,7 +1,10 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, getDefaultMiddleware } from "@reduxjs/toolkit";
 import axios from "axios";
 import { formattedUrl } from "../config";
 
+const customizedMiddleware = getDefaultMiddleware({
+  serializableCheck: false
+})
 // first create the thunk
 export const fetchDestination = createAsyncThunk(
   'fetchDestination',

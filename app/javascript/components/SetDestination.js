@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateDestination } from "../reducer/destinationSlice";
+import { fetchDestination } from "../reducer/destinationSlice";
 import { allDestinations } from "../reducer/allDestinationSlice";
 
-const SetDestination = () => {
+const SetDestination = (props) => {
   const destination = useSelector((state) => state.destination);
   // for the list section
   const alldestinations = useSelector((state) => state.destinations)
@@ -18,6 +19,13 @@ const SetDestination = () => {
   useEffect(() => {
     dispatch(allDestinations())
   }, [])
+
+  useEffect(() => {
+    dispatch(fetchDestination())
+    setLatitude(destination.latitude);
+    setLongitude(destination.longitude);
+    
+  }, [destination])
 
   const handleSubmit = (e) => {
     const payload = {
@@ -48,7 +56,7 @@ const SetDestination = () => {
     }
     
   }
-
+  console.log("render")
   return (
     <>
       <div>{destError}</div>
