@@ -1,0 +1,84 @@
+// Sass variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "~@activeadmin/activeadmin/src/scss/mixins";
+@import "~@activeadmin/activeadmin/src/scss/base";
+
+//@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+// Overriding any non-variable Sass must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+
+
+.admin_dashboard {
+  #main_content {
+    background: transparent no-repeat center center fixed url("../images/background.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .blank_slate {
+    color: #e6f504f7;
+    font-size: 30px;
+    margin-top: 90px !important;
+  }
+}
+
+.add-participant-form {
+  .user-dropdown {
+    font-size: 14px;
+    width: 300px;
+    height: 30px;
+    margin-right: 20px;
+    padding: 5px;
+
+    option {
+      font-size: 14px;
+    }
+  }
+}
+
+.user-login_header {
+  border-bottom: 1px solid #eee;
+  margin: 10px auto;
+  padding: 0 0 5px;
+}
+
+.user-login {
+  text-align: center;
+}
+
+.user-login .homescreen-branding_logo {
+  max-height: 40px;
+  max-width: 48px;
+}
+
+.user-login-form-label {
+    display: block;
+    width: 20%;
+    float: left;
+    font-size: 1em;
+    font-weight: 700;
+    color: #5e6469;
+
+    &_remember {
+      display: block;
+      width: 20%;
+      float: left;
+      font-size: 1em;
+      font-weight: 200;
+      color: #5e6469;
+    }
+}
