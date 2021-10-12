@@ -68,7 +68,7 @@ const CurrentLocation = ({ isGeolocationAvailable, isGeolocationEnabled, coordsI
                 <div>Your, isGeolocationEnableisGeolocationEnableisGeolocationEnabled browser does not support Geolocation</div>
               ) : !isGeolocationEnabled ? (
                 <div>Geolocation is not enabled</div>
-              ) : coordsInfo ? (tableInfo(coordsInfo)) : <div>Getting the location data&hellip; </div>
+              ) : coordsInfo ? (tableInfo(coordsInfo)) : <div>Getting the location data </div>
             }
           </div>
           <div className="col-1 text-right">

@@ -4,8 +4,8 @@ import DestinationListItem from './DestinationListItem'
 
 const selectDestinations = state => state.allDestinations.destinations
 
-const DestinationList = () => {
-  const destinations = useSelector(selectDestinations)
+const DestinationList = (props) => {
+  const destinations = useSelector(selectDestinations) || props.destinations
 
   const renderedListItems = destinations.map(d => {
     return <DestinationListItem key={d.id} destination={d} />
