@@ -1,13 +1,23 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-class HelloWorld extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        <div>Hello world!!!!!!!!!!!!!!</div>
-      </React.Fragment>
-    );
-  }
+import { useDispatch } from "react-redux";
+import { allDestinations } from "../reducer/allDestinationSlice";
+
+const HelloWorld = (props) => {
+//class HelloWorld extends React.Component {
+  // if this is the home screen
+  // load global state in redux store
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(allDestinations())
+  })
+  
+  return (
+    <>
+      <div>Hello world! This is home page</div>
+    </>
+  );
 }
 
 HelloWorld.propTypes = {

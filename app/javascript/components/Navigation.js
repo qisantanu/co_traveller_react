@@ -19,6 +19,9 @@ const Navigation = () => {
               <li className="nav-item">
                 <Link to="/location" className="nav-link">Location</Link>
               </li>
+              <li className="nav-item">
+                <Link to="/destinations" className="nav-link">Destinations</Link>
+              </li>
             </ul>
           </div>
         </div>

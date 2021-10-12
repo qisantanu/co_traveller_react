@@ -7,18 +7,11 @@ import { allDestinations } from "../reducer/allDestinationSlice";
 
 const SetDestination = (props) => {
   const destination = useSelector((state) => state.destination);
-  // for the list section
-  const alldestinations = useSelector((state) => state.destinations)
   const dispatch = useDispatch()
 
   const [latitude, setLatitude] = useState(destination.latitude)
   const [longitude, setLongitude] = useState(destination.longitude)
-  const [destError, setDestError] = useState('')
   const history = useHistory();
-
-  useEffect(() => {
-    dispatch(allDestinations())
-  }, [])
 
   useEffect(() => {
     dispatch(fetchDestination())
@@ -40,23 +33,6 @@ const SetDestination = (props) => {
     e.preventDefault();
   }
 
-  const DestinationRow = (dest) => {
-    return (
-      <tr>
-        <td id={dest.id}>dest.id</td>
-      </tr>
-    )
-  }
-
-  const destinationList = () => {
-    if(alldestinations) {
-      alldestinations.map(destination => {
-        DestinationRow(destination)
-      })
-    }
-    
-  }
-  console.log("render")
   return (
     <>
       <div>{destError}</div>
@@ -74,32 +50,6 @@ const SetDestination = (props) => {
 
         <input type="submit" value="Submit" className="btn btn-primary mb-2" />
       </form>
-
-      <div>
-
-
-        <h3>List of destinations</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Lat</th>
-              <th>Long</th>
-              <th>Is Current</th>
-            </tr>
-
-          </thead>
-          <tbody>
-
-            {
-              destinationList()
-            }
-
-
-          </tbody>
-        </table>
-
-      </div>
     </>
   )
 }
