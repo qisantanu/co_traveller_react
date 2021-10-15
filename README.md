@@ -1,6 +1,6 @@
 # README
 
-It is a rails application running the front end part based on react. The API is defined in the other rails application, but ideally can be put here.
+It is a rails application running the front end part based on react. The API is defined in the same rails application.
 
 Things you may want to cover:
 
@@ -22,9 +22,6 @@ Things you may want to cover:
   run `rails db:create db:migrate db:seed`
 
 * API server setup
-  Run the following applications:
-  https://bitbucket.org/tom_4_dev/co_traveller
-
   Update the url for the API server app in app/javascripts/config.json
 
 * Start the server
