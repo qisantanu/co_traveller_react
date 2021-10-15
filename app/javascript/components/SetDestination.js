@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateDestination } from "../reducer/destinationSlice";
 import { fetchDestination } from "../reducer/destinationSlice";
-import { allDestinations } from "../reducer/allDestinationSlice";
 
 const SetDestination = (props) => {
   const destination = useSelector((state) => state.destination);
@@ -35,7 +34,7 @@ const SetDestination = (props) => {
 
   return (
     <>
-      <div>{destError}</div>
+      
       <form className="form-inline mx-4" onSubmit={e => { handleSubmit(e) }}>
         <label >
           Destination Latitude:

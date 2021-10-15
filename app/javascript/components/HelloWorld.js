@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useDispatch } from "react-redux";
 import { allDestinations } from "../reducer/allDestinationSlice";
+import { fetchDestination } from "../reducer/destinationSlice";
 
 const HelloWorld = (props) => {
 //class HelloWorld extends React.Component {
@@ -11,7 +12,9 @@ const HelloWorld = (props) => {
 
   useEffect(() => {
     dispatch(allDestinations())
+    dispatch(fetchDestination())
   })
+  
   
   return (
     <>
