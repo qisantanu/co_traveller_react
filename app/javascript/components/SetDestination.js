@@ -35,7 +35,7 @@ const SetDestination = (props) => {
 
   return (
     <>
-      <div>{destError}</div>
+      
       <form className="form-inline mx-4" onSubmit={e => { handleSubmit(e) }}>
         <label >
           Destination Latitude:
