@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateDestination } from "../reducer/destinationSlice";
 import { fetchDestination } from "../reducer/destinationSlice";
-import { allDestinations } from "../reducer/allDestinationSlice";
 
 const SetDestination = (props) => {
   const destination = useSelector((state) => state.destination);
