@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react"
 import { geolocated } from "react-geolocated";
 import CurrentLocation from "./CurrentLocation";
 import LocationList from "./LocationList";
-//import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
-//import { fetchDestination } from "../reducer/destinationSlice";
-//import { ModalTemplate } from "./ModalTemplate";
+import { ModalTemplate } from "./ModalTemplate";
 import { Button, Modal } from "react-bootstrap";
 //import SetDestination from "./SetDestination";
 import { updateDestination } from "../reducer/destinationSlice";
@@ -38,37 +36,14 @@ const Location = (props) => {
 
   return (
     <>
+      <Button variant="primary" onClick={handleShow}>Update Destination</Button>
       <CurrentLocation isGeolocationAvailable={props.isGeolocationAvailable} isGeolocationEnabled={props.isGeolocationEnabled} coordsInfo={props.coords} destination={destination} />
 
-      <Button variant="primary" onClick={handleShow}>Update Destination</Button>
+      <Button variant="primary" onClick={handleShow}>Update Destination1</Button>
 
       <LocationList />
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header>
-          <Modal.Title>Update destination</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <form className="form-inline mx-4" onSubmit={e => { handleSubmit(e) }}>
-            <label >
-              Latitude:
-
-            </label>
-            <input type="text" className="form-control mb-2 mr-sm-2" name="latitude" value={latitude} onChange={e => setLatitude(e.target.value)} />
-            <label>
-              Longitude:
-            </label>
-            <input type="text" className="form-control mb-2 mr-sm-2" name="longitude" value={longitude} onChange={e => setLongitude(e.target.value)} />
-
-            <input type="submit" value="Submit" className="btn btn-primary mb-2" />
-          </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <ModalTemplate title='Update destination' />
     </>
   );
 
